@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="admin_login.css" />
+  <link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f67c1a1b14.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+  <form action="/GoBackToMainPage" , method="POST">
+    <div class="logo">
+      <button> <a href="main.html"><i class="fa-solid fa-arrow-left fa-4x"></i></a> </button>
+    </div>
+  </form>
+</header>
+
+<body>
+  <div class="login-card">
+    <h2 class="expand-options" tabindex="0">Admin</h2>
+    <div class="options">
+      <form action="/TakeToStudentPage" , method="POST">
+        <h2><a class="student_click" href="student_login.html">Student</a></h2>
+      </form>
+      <form action="/TakeToTutorPage" , method="POST">
+        <h2><a class="tutor_click" href="tutor_login.html">Tutor</a></h2>
+      </form>
+    </div>
+    <h2>Login</h2>
+    <h3>Enter your credentials</h3>
+    <form class="login-form" action="/AdminLoginForm">
+      <input type="text" placeholder="s20#######@kfupm.edu.sa" name="emailAdmin" />
+      <input type="password" placeholder="Password" name="passAdmin" />
+      <a href="forget_password.html">Forgot your password?</a>
+      <a class="a2" href="register.html">Don't have an account?</a>
+      <button class="login_button" type="submit">LOGIN</button>
+    </form>
+  </div>
+
+  <script>
+    // Select the forms and cards
+    const adminLoginForm = document.querySelector('.login-form');
+
+
+    // Handle email form submission
+    adminLoginForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Get the email from the form input
+      const username = adminLoginForm.emailAdmin.value;
+      const password = adminLoginForm.passAdmin.value;
+
+      // Send a GET request to the /EmailForm route with the email as a query parameter
+      const response = await fetch(`/AdminLoginForm?emailAdmin=${username}&passAdmin=${password}`);
+
+      // Check if the email is valid
+      if (response.ok) {
+        // If the email is valid, hide the email card and show the OTP card
+        window.location.href = '/AdminPage';
+        alert('Login success!!');
+
+      } else {
+        // If the email is not valid, show an alert
+        alert('Login invalid. Please check username and password.');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,417 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Euclid Circular A';
+}
+
+html,
+body,
+.wrapper {
+    height: 100%;
+}
+
+@keyframes rotate {
+    100% {
+        background-position: 15% 50%;
+    }
+}
+
+
+
+header {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+
+
+    background: rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 0, 0, 0.59);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.logo>a {
+    transition: text-shadow .3s;
+}
+
+.logo>a:hover {
+    text-shadow: -0.5rem -0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+a {
+    text-decoration: none;
+    color: #242424;
+}
+
+.notification_button {
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.sessions_button {
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.notification_button>button {
+    background-color: #00a8e8;
+    border-color: #007ea7;
+}
+
+.notification_button>button {
+    text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.notification_button:hover {
+    text-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+hr.rounded {
+    border-top: 0.2rem solid #bbb;
+    border-radius: 5px;
+}
+
+.notification_container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0.5em 0.5em;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "notification_approved notification_course notification_day"
+        "notification_approved notification_name notification_time";
+}
+
+.notification_course {
+    grid-area: notification_course;
+}
+
+.notification_day {
+    grid-area: notification_day;
+}
+
+.notification_time {
+    grid-area: notification_time;
+}
+
+.notification_name {
+    grid-area: notification_name;
+}
+
+.notification_approved {
+    grid-area: notification_approved;
+    text-align: center;
+    font-weight: bold;
+    background-color: lightgreen;
+    padding: 0.5em;
+}
+
+
+
+body {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0 24px;
+    background-image: url("background_student.svg");
+    background-repeat: no-repeat;
+    background-size: 300%;
+    font-family: "Euclid Circular A";
+    color: #000;
+    animation: rotate 20s infinite alternate linear;
+}
+
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 0.7fr;
+    grid-template-rows: 0.5fr 2.1fr 0.4fr repeat(2, 1fr);
+    grid-auto-flow: row;
+    gap: 1rem 2rem;
+}
+
+.title_container {
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+.left_container {
+    grid-area: 2 / 1 / 4 / 2;
+}
+
+.right_container {
+    grid-area: 2 / 2 / 4 / 4;
+}
+
+.schedule_container {
+    grid-area: 4 / 1 / 6 / 4;
+}
+
+
+
+/*Design of the containers*/
+.title_container,
+.left_container,
+.right_container {
+    position: relative;
+    width: 100%;
+    margin: 0 1rem;
+    padding: 2rem 3rem 2rem;
+    border-radius: 1.25rem;
+    background: #F5F5F5;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 0.8);
+}
+
+
+.schedule_container {
+    position: relative;
+    width: 100%;
+    margin: 0 1rem;
+    padding: 2rem 3rem 2rem;
+    border-radius: 1.25rem;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.left_container label {
+    font-size: 1.5rem;
+}
+
+.right_container label {
+    float: left;
+}
+
+.right_container input {
+    border: 2px solid #ebebeb;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+    width: 100%;
+    height: 2rem;
+}
+
+.time input {
+    width: auto;
+    float: inline-start;
+}
+
+.time {
+    padding-top: 5rem;
+}
+
+.review-tutor {
+    background-color: #007da71f;
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.review-tutor>a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #003459;
+
+    background: linear-gradient(0deg, #00a8e8, #00a8e8) no-repeat right bottom / 0 var(--bg-h);
+    transition: background-size 350ms;
+    --bg-h: 100%;
+}
+
+.review-tutor>a:where(:hover, :focus-visible) {
+    background-size: 100% var(--bg-h);
+    background-position-x: left;
+}
+
+.left-arrow,
+.right-arrow {
+    cursor: pointer;
+    height: 56px;
+    padding: 0 16px;
+    border-radius: 0.5rem;
+    background: #0C7E40;
+    color: #f9f9f9;
+    border: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: all 0.375s;
+}
+
+.days {
+    padding: 1rem;
+}
+
+.time input {
+    float: right;
+}
+
+.form-check-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-check-input {
+    margin-left: 10px;
+}
+
+
+
+/* Style the labels */
+
+.btn-outline-danger {
+    font-weight: bold;
+    border-radius: 1rem;
+    background-color: #62cbf58f;
+    border-color: #007ea7;
+}
+
+.days label {
+    color: #007ea7;
+}
+
+.btn-outline-danger:hover:not(.active) {
+    background-color: #007ea7;
+    border-color: #62cbf58f;
+    color: #F5F5F5;
+}
+
+.btn-check:checked+.btn-outline-danger {
+    background-color: #007da7f1;
+    border-color: #62cbf5d7;
+    color: #F5F5F5;
+}
+
+.btn-check:checked+.btn-outline-danger:hover {
+    background-color: #62cbf5da;
+    border-color: #62cbf58f;
+    color: #007ea7;
+}
+
+
+.table-container {
+    border-radius: 1rem;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+
+    height: 28rem;
+    /* Set a fixed height for the table container */
+    overflow-y: scroll;
+    /* Add a vertical scrollbar to the container */
+}
+
+.table-container th {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.table-container tr {
+    background-color: #fff;
+}
+
+.search_button,
+.request_button {
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    border-radius: 0.5rem;
+    background: #216ce7;
+    color: #f9f9f9;
+    border: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: all 0.375s;
+    margin-top: 1rem;
+}
+
+
+
+.search_button:hover,
+.notification_container button:hover,
+.left-arrow:hover,
+.right-arrow:hover,
+.request_button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.left-arrow {
+    float: left;
+}
+
+.right-arrow {
+    float: right;
+}
+
+h3 {
+    color: rgba(0, 0, 0, 0.38);
+    margin: 0 0 30px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.notification_container button {
+    height: 3rem;
+    width: 6rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    text-align: center;
+    transition: all 0.375s;
+}
+
+.accept_request_button {
+    background: #46f34fd0;
+    float: right;
+}
+
+.accept_request_button:hover {
+    background: #46f34f;
+}
+
+
+
+.decline_request_button {
+    background: #f34646b0;
+    float: left;
+}
+
+.decline_request_button:hover {
+    background: #f34646;
+    float: left;
+}
+
+.courses_list {
+    border: 2px solid #ebebeb;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+    width: 50%;
+    height: 2rem;
+}

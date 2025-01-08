@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Student Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet">
+    <link href="student_page.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f67c1a1b14.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <div class="logo">
+        <form action="/BackButton" method="POST">
+            <button><i class="fa-solid fa-right-from-bracket fa-rotate-180 fa-4x"></i></button>
+        </form>
+    </div>
+
+    <div class="notification_button">
+        <!-- Use "Badge" from bootstrap -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"><i class="fa-regular fa-bell fa-3x"></i>
+        </button>
+    </div>
+</header>
+
+
+<body class="p-3 m-0 border-0 bd-example">
+
+    <!-- offcanvas container -->
+    <div class="offcanvas_container">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="fa-regular fa-bell fa-xl"></i>
+                    Notifications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <!-- notification container that will copy pasted (create new ones when getting notified) -->
+                <hr class="rounded">
+                <div class="notification_container">
+                    <div class="notification_approved">
+                        <p><b>Request has been approved!</b></p>
+                    </div>
+                    <div class="notification_course">
+                        <p><b>Course:</b> <br> Chem101</p>
+                    </div>
+                    <div class="notification_day">
+                        <p><b>Day:</b> <br> Sunday</p>
+                    </div>
+                    <div class="notification_time">
+                        <p><b>Time:</b><br> <time>12:00</time> PM</p>
+                    </div>
+                    <div class="notification_name">
+                        <p><b>Name:</b> <br> Ali AlBahnasi</p>
+                    </div>
+                </div>
+
+
+                <!-- notification container that will copy pasted (create new ones when getting notified) -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas container -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Canceling Session</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you'd like to cancel this session?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, don't cancel.</button>
+                    <button type="button" class="btn btn-primary">Yes, cancel session!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+    <div class="container">
+
+        <div class="title_container">
+            <h1><b>Student Schedule</b></h1>
+        </div>
+
+
+
+        <div class="left_container">
+            <h2>Schedule a Tutor </h2>
+            <h3>Details will be displayed in the "Tutor's Detials"</h3>
+
+            <form action="/ScheduleTutor" method="GET">
+                
+                <select class="form-select" aria-label="Default select example" name="CourseSelected">
+                    <!-- nunjucks Comes Here -->
+                    
+                    <option selected>Choose a course</option>
+                    <option value="CHEM 101">CHEM 101</option>
+                    <option value="PHYS 101">PHYS 101</option>
+                    <option value="MATH 101">MATH 101</option>
+                    
+                </select>
+                <div class="days">
+                    <div class="btn-group-vertical" role="group" aria-label="Vertical checkbox toggle button group">
+                        
+                        <input type="checkbox" class="btn-check" name="day" id="vbtn-checkbox1"
+                            autocomplete="off" value="Sunday">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox1">Sunday</label>
+
+                        <input type="checkbox" class="btn-check" name="day" id="vbtn-checkbox2"
+                            autocomplete="off" value="Monday">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox2" >Monday</label>
+
+                        <input type="checkbox" class="btn-check" name="day" id="vbtn-checkbox3"
+                            autocomplete="off" value="Tuesday">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox3">Tuesday</label>
+
+                        <input type="checkbox" class="btn-check" name="day" id="vbtn-checkbox4"
+                            autocomplete="off" value="Wednesday">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox4">Wednesday</label>
+
+                        <input type="checkbox" class="btn-check" name="day" id="vbtn-checkbox5"
+                            autocomplete="off" value="Thursday">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox5">Thursday</label>
+
+                        <!-- <input type="checkbox" class="btn-check" name="vbtn-checkbox" id="vbtn-checkbox6"
+                            autocomplete="off">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox6">Friday</label>
+
+                        <input type="checkbox" class="btn-check" name="vbtn-checkbox" id="vbtn-checkbox7"
+                            autocomplete="off">
+                        <label class="btn btn-outline-danger" for="vbtn-checkbox7">Saturday</label> -->
+
+                    </div>
+                </div>
+
+
+
+                <br>
+
+                <div class="virtual">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">
+                            Online Sessions
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        </label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="review-tutor">
+                    <a href="review_tutor_page.html">Review Your Past Tutors Here!</a>
+                </div>
+
+                <br>
+               
+                    <button class="search_button" type="submit" ><i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    </button>
+               
+            </form>
+        </div>
+
+        {%block content%}
+        <div class="right_container">
+            
+            <h1>Tutor's Details <i class="fa-solid fa-person-chalkboard"></i></h1>
+            <form>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="NameTextBox" value="{{myData[0]}}"  disabled>
+                </div>
+                <br>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="PhoneNumberTextBox" value="{{myData[1]}}" disabled>
+                </div>
+                <br>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="EmailTextBox" value="{{myData[2]}}"disabled>
+                </div>
+                <br>
+                <div>
+                    <label for="times">Available Times:</label>
+                    <input type="text" id="times" name="AvaliableTimeTextBox"disabled>
+                </div>
+                <br>
+                <!-- <div>
+                    <label for="virtual">Virtual Tutor:</label>
+                    <input type="checkbox" id="virtual" disabled>
+                </div> -->
+
+                <br>
+
+                <div class="tutor_days">
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" disabled>
+                        <label class="btn btn-outline-primary" for="btncheck1">Sunday</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" checked disabled>
+                        <label class="btn btn-outline-primary" for="btncheck2">Monday</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" disabled>
+                        <label class="btn btn-outline-primary" for="btncheck3">Tuesday</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked disabled>
+                        <label class="btn btn-outline-primary" for="btncheck1">Wednesday</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" disabled>
+                        <label class="btn btn-outline-primary" for="btncheck2">Thursday</label>
+
+                        <!-- <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" disabled>
+                        <label class="btn btn-outline-primary" for="btncheck3">Friday</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked disabled>
+                        <label class="btn btn-outline-primary" for="btncheck1">Saturday</label> -->
+                    </div>
+                </div>
+
+
+                <br>
+
+                <div class="slider">
+                    <button class="left-arrow"><i class="fa-solid fa-arrow-left fa-3x"
+                            style="color: #ffffff;"></i></button>
+                    <button class="right-arrow"><i class="fa-solid fa-arrow-right fa-3x"
+                            style="color: #ffffff;"></i></button>
+                </div>
+
+
+
+                <!-- <div class="time">
+                    <label for="appt">Select the desired time </label>
+                    <input type="time" id="appt" name="appt">
+                </div> -->
+
+
+                <button class="request_button" type="submit">Request that Tutor!</button>
+
+        </div>
+        {% endblock %}
+
+        <div class="schedule_container">
+            <h2>Upcoming Sessions</h2>
+            <br>
+            <br>
+
+            <div class="table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Virutal</th>
+                            <th>Course</th>
+                            <th>Cancel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John</td>
+                            <td>Monday</td>
+                            <td><time>4:00</time> PM</td>
+                            <td>Yes</td>
+                            <td>CHEM 101</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane</td>
+                            <td>Monday</td>
+                            <td><time>6:00</time>PM</td>
+                            <td>No</td>
+                            <td>STAT 319</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Bob</td>
+                            <td>Tuesday</td>
+                            <td><time>7:30</time>PM</td>
+                            <td>Yes</td>
+                            <td>ENG 214</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-ban"></i>
+                                </button>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+<script src="/public/StudentPageJS.js"></script>
+</body>
+
+</html>

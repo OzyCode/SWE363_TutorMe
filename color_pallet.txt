@@ -1,0 +1,22 @@
+Font: Euclid Circular A
+
+Colors (General):
+#0C7E40 (as your main brand color)
+#6ABF8F (a brighter shade of green)
+#E1F1E6 (a light green that will contrast well with your main brand color)
+#FFFFFF (white for background and text)
+#3C3C3C (a dark grey for text or borders)
+
+Colors (Admin):
+#752929 (Dark red)
+#b12b36 (Light dark red)
+
+Color (Tutor):
+#003459 (Dark Blue)
+#007ea7 (Mid-dark blue)
+#00a8e8 (Neon Blue)
+
+Color (Register):
+#895b50 (Clay Brown)
+#b38063 (Light-Sand Brown)
+#98623F (Dark-Sand Brown)

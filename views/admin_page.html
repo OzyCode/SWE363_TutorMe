@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Admin Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet">
+    <script src="tutor_page.js"></script>
+    <link href="admin_page.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f67c1a1b14.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+    <div class="logo">
+        <a href="main.html"><i class="fa-solid fa-right-from-bracket fa-rotate-180 fa-4x"></i></a>
+    </div>
+
+    <div class="notification_button">
+        <!-- Use "Badge" from bootstrap -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"><i class="fa-regular fa-bell fa-3x"></i>
+        </button>
+    </div>
+</header>
+
+
+<body class="p-3 m-0 border-0 bd-example">
+
+    <!-- offcanvas container -->
+    <div class="offcanvas_container">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="fa-regular fa-bell fa-xl"></i>
+                    Notifications</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+
+                <!-- notification container that will copy pasted (create new ones when getting notified) -->
+                <hr class="rounded">
+                <div class="notification_container">
+                    <div class="notification_course">
+                        <p><b>Course:</b> <br> Chem 101</p>
+                    </div>
+                    <div class="notification_grade">
+                        <p><b>Grade:</b> <br> A+</p>
+                    </div>
+
+                    <div class="notification_name">
+                        <p><b>Name:</b> <br> Ali AlBahnasi</p>
+                    </div>
+                    <div class="notification_buttons">
+                        <button class="decline_request_button"><i class="fa-solid fa-x fa-xl"
+                                style="color: #f9f9f9;"></i></button>
+                        <button class="accept_request_button"><i class="fa-solid fa-check fa-xl"
+                                style="color: #f9f9f9;"></i></button>
+                    </div>
+                </div>
+                <!-- notification container that will copy pasted (create new ones when getting notified) -->
+
+                <hr class="rounded">
+                <div class="notification_container">
+                    <div class="notification_course">
+                        <p><b>Course:</b> <br> STAT 319</p>
+                    </div>
+                    <div class="notification_grade">
+                        <p><b>Grade:</b> <br> B+</p>
+                    </div>
+
+                    <div class="notification_name">
+                        <p><b>Name:</b> <br> boop beep</p>
+                    </div>
+                    <div class="notification_buttons">
+                        <button class="decline_request_button"><i class="fa-solid fa-x fa-xl"
+                                style="color: #f9f9f9;"></i></button>
+                        <button class="accept_request_button"><i class="fa-solid fa-check fa-xl"
+                                style="color: #f9f9f9;"></i></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas container -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Revoke Access to Tutoring Form </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    Remove this tutor from tutoring ...
+    
+                    <br>
+                    
+                    <div class="select_course_container">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Choose a course</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, don't remove this tutor.</button>
+                    <button type="button" class="btn btn-primary">Yes, remove this tutor!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+    <div class="container">
+        <div class="title_container">
+            <h1><b>Admin Viewport</b></h1>
+        </div>
+
+        <div class="main_container">
+
+            <div class="search_container">
+
+                <div class="search_textbox_container">
+
+                    <form action="/search" method="get">
+                        <label for="search">Search:</label>
+                        <input type="text" id="search" name="q" placeholder="Tutor's Name/ID">
+                        <button class="search_textbox_button" type="submit"><i
+                                class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                </div>
+
+                <div class="select_course_container">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Choose a course</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                </form>
+            </div>
+
+
+            <div class="reviews_container">
+
+                <div style="height: 300px; overflow-y: scroll;">
+
+                    <div class="accordion" id="tutorAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="tutorName">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#tutorCollapse" aria-expanded="false" aria-controls="tutorCollapse">
+                                    Tutor Name
+                                </button>
+                            </h2>
+                            <div id="tutorCollapse" class="accordion-collapse collapse" aria-labelledby="tutorName"
+                                data-bs-parent="#tutorAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>Courses</h5>
+                                            <p>Course 1, Course 2, Course 3</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5>Star Rating</h5>
+
+                                            <div class="stars_container">
+                                                <div class="stars">
+                                                  <input class="star star-5" id="star-5" type="radio" name="star" value="5" disabled/>
+                                                  <label class="star star-5" for="star-5"></label>
+                                                  <input class="star star-4" id="star-4" type="radio" name="star" value="4" disabled/>
+                                                  <label class="star star-4" for="star-4"></label>
+                                                  <input class="star star-3" id="star-3" type="radio" name="star" value="3" disabled checked/>
+                                                  <label class="star star-3" for="star-3"></label>
+                                                  <input class="star star-2" id="star-2" type="radio" name="star" value="2" disabled/>
+                                                  <label class="star star-2" for="star-2"></label>
+                                                  <input class="star star-1" id="star-1" type="radio" name="star" value="1" disabled/>
+                                                  <label class="star star-1" for="star-1"></label>
+                                                </div>
+                                              </div>
+                                              
+                                              
+
+                                            <p>(45)</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h5>Comments</h5>
+                                    <ul>
+                                        <li>Comment 1</li>
+                                        <li>Comment 2</li>
+                                        <li>Comment 3</li>
+                                    </ul>
+
+                                    <button type="delete_button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </button>
+
+                                    <br> <br>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

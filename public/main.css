@@ -1,0 +1,197 @@
+*{
+    font-family:'Euclid Circular A';
+}
+
+.KFUPMimg{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.carousel-item{
+    text-align: center;
+}
+.Ccontainer1{
+    /* margin-bottom: 1%; */
+}
+
+.KfupmPic{
+    background-image: url("background_main.svg");
+    width: 100%;
+    background-size:cover;
+
+}
+.greeting{
+    padding: 0% 20%;
+    text-align: center;
+}
+.GreetingText{
+    padding: 13%;
+    
+}
+.headingWelcome{
+    font-size: 4em;
+}
+.navbar{
+    background-color: #57C5B6;
+}
+.Logo{
+    font-size: 2rem;
+    padding: 9% 0 9% 0;
+    padding-left: 60%;
+    
+}
+.kfupmlogo{ 
+    /* border: 1px solid; */
+    border-radius: 5%;
+    width: 5em;
+    height: auto;
+    padding-left: 1em;
+}
+@media (max-width:268px) {
+    .kfupmlogo{ 
+        /* border-radiuss: 5%; */
+        width: 2em;
+    }   
+}
+
+
+.KfupmTutorBrand{
+    padding-left: 1em;
+    font-weight: bold;
+    
+}
+
+.MarketingDiv{
+    text-align: center;
+}
+.Marketing{
+    padding: 5% 12%;
+    background-color: #efefee;
+
+}
+.headingfour{
+    font-weight: bold;
+}
+
+.fontIcon{
+    margin: 5%;
+}
+
+#NavBarBrand{
+    color: white;
+}
+.LoginStudent, .LoginTutor, .LoginAdmin{
+/* background-color: #54cdee; */
+}
+
+.LoginStudent{
+    background-image: url("background_student.svg");
+}
+
+.LoginTutor{
+    background-image: url("background_tutor.svg");
+}
+
+.LoginAdmin{
+    background-image: url("background_admin.svg");
+}
+
+.LoginStudentContainer{
+    padding: 5% 15% 10%;
+    text-align: center;
+}
+.LoginAdminContainer{
+    padding: 5% 15% 10%;
+    text-align: center;
+}
+
+.LoginTutorContainer{
+    padding: 5% 15% 10%;
+    text-align: center;
+}
+.ContainerDivReigster{}
+
+.StudentLoginHeading, .TutorLoginHeading, .AdminLoginHeading, .RegisterHeading, .RegisterP, .headingWelcome, .h3Welcome {
+    color: #efefee;
+    text-shadow: 1px 1px 2px #000,
+    1px 1px 4px #000,
+    1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.LoginButton_Student{
+    margin-top: 15%;
+    border: 3px solid rgb(15, 1, 1);
+    width: 11em;
+    height: 4.5em;
+    border-radius: 2em;
+    color: #efefee;
+    background-color: #0C7E40;
+    transition-duration: 0.5s;
+    font-family: 'Euclid Circular A';
+}
+
+
+.LoginButton_Tutor{
+    margin-top: 15%;
+    border: 3px solid rgb(15, 1, 1);
+    width: 11em;
+    height: 4.5em;
+    border-radius: 2em;
+    color: #efefee;
+    background-color: #003459;
+    transition-duration: 0.5s;
+    font-family: 'Euclid Circular A';
+}
+
+.LoginButton_Admin{
+    margin-top: 15%;
+    border: 3px solid rgb(15, 1, 1);
+    width: 11em;
+    height: 4.5em;
+    border-radius: 2em;
+    color: #efefee;
+    background-color: #752929;
+    transition-duration: 0.5s;
+    font-family: 'Euclid Circular A';
+}
+
+.RegisterButton{
+    border: 3px solid rgb(15, 1, 1);
+    width: 11em;
+    height: 4.5em;
+    border-radius: 2em;
+    color: white;
+    background-color: #895b50;
+    transition-duration: 0.5s;
+}
+
+.LoginButton_Student:hover ,.LoginButton_Tutor:hover, .LoginButton_Admin:hover, .RegisterButton:hover {
+    box-shadow: 5px 5px 0px black;
+}
+
+
+.ReigsterDiv{
+    text-align: center;
+    background-image: url("background_register.svg");
+    height: auto;
+    padding: 5% 15% 5%;
+    background-size: cover;
+}
+
+.nav-item{
+    font-weight: bold;
+}
+
+
+
+
+.ForCenteringNextDivInCode{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}

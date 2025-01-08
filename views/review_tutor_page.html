@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Review your tutor!</title>
+    <link rel="stylesheet" href="review_tutor_page.css" />
+    <link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f67c1a1b14.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+
+<header>
+    <form action="/RedirectToStudentPage" , method="post">
+        <div class="logo">
+           <Button><a><i class="fa-solid fa-arrow-left fa-4x"></i></a></Button> 
+        </div>
+    </form>
+</header>
+
+
+<body>
+
+    <div class="login-card">
+
+
+        
+        <h2>We'd love to hear your feedback!</h2>
+        <h3>Choose one of your past tutors to provide a review on</h3>
+        <form class="review-form", method="POST", action="/ReviewTutorSubmit">
+
+            <label>Select your tutor</label>
+          
+            <select class="minimal" name="ItemSelected">
+                {% for y in x %}
+                <option value="{{y.TutID}}">{{y.Name}}</option>
+                {% endfor %}
+            </select>
+            
+            <div class="stars_container">
+                <div class="stars">
+                    
+                        <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="star-4" type="radio" name="star"  value="4"/>
+                        <label class="star star-4" for="star-4"></label>
+                        <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                        <label class="star star-3" for="star-3"></label>
+                        <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                        <label class="star star-2" for="star-2"></label>
+                        <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
+                        <label class="star star-1" for="star-1"></label>
+                    
+                </div>
+            </div>
+
+            <label>Comments</label>
+            <textarea id="my-textarea" rows="10" name="CommentOfStudent"></textarea>
+
+            <button class="send_button" type="submit"><i class="fa-regular fa-paper-plane fa-xl"
+                    style="color: #f9f9f9;"></i></button>
+
+        </form>
+    </div>
+</body>
+
+</html>

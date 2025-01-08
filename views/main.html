@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/7ad8314c0a.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+
+  <link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet">
+
+
+  <title>KFUPM Tutor</title>
+</head>
+
+<body>
+  <div class="Ccontainer1">
+    <nav class="navbar navbar-expand-lg bg-success">
+
+
+      <a href="main.html" class="pull-left"><img class="kfupmlogo" src="kfupmlogo2.png"></a>
+      <a class="navbar-brand bs-light KfupmTutorBrand " href="#" id="NavBarBrand">KFUPM TUTOR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <a class="nav-link navbar1-text" href="#">Login Pages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar1-text" href="#">Register Page</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active KfupmPic">
+        <div class="greeting"></div>
+        <div class="GreetingText">
+
+
+
+
+
+          <p class="headingWelcome"><b> Welcome to KFUPM Tutor</b></p>
+          <h3 class="h3Welcome">Learning Today </h3>
+          <h3 class="h3Welcome">for a Better Tomorrow </h3>
+          <!-- had to use class in order to costumize, for some reason, it was glitched -->
+
+          <br><br>
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="Marketing">
+    <div class="row">
+      <div class="col-lg-6 MarketingDiv MarketDiv1">
+        <i class="fontIcon fa-sharp fa-solid fa-thumbs-up fa-4x" style="color: #125dde;"></i>
+        <h4 class="headingfour">Friendly Website</h4>
+        <p>a friendly platform that ease the way of requesting tutors online!</p>
+      </div>
+      <div class="col-lg-6 MarketingDiv MarketDiv2">
+        <i class="fontIcon fa-solid fa-arrow-up fa-4x" style="color: #0658e5;"></i>
+        <h4 class="headingfour">Increase Your Grades</h4>
+        <p>with our website you can find a tutor that can helps you to improve your Grades</p>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <div class="LoginSection">
+
+    <div class="row">
+
+      <div class="LoginStudent col-lg-4">
+        <form action="/TakeToStudentPage", method="POST">        
+          <div class="LoginStudentContainer">
+            <h2 class="StudentLoginHeading">Student Login</h2>
+            <a href="student_login.html"><button class="LoginButton_Student">Login</button></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="LoginTutor col-lg-4">
+          <form action="/TakeToTutorPage", method="POST">
+          <div class="LoginTutorContainer">
+            <h2 class="TutorLoginHeading">Tutor Login</h2>
+            <a href="tutor_login.html"><button class="LoginButton_Tutor">Login</button></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="LoginAdmin col-lg-4">
+        <form action="/TakeToAdminPage" , method="POST">
+        <div class="LoginAdminContainer">
+          <h2 class="AdminLoginHeading">Admin Login</h2>
+          <a href="admin_login.html"><button class="LoginButton_Admin">Login</button></a>
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+  </div>
+
+  <div class="RegisterPageSection">
+    <div class="ContainerDivReigster">
+      <form action="/TakeToRegisterPage", method="POST">
+      <div class="ReigsterDiv col-lg-12 col-md-12 col-sm-12">
+        <h2 class="RegisterHeading">Don't have an account?</h2>
+        <p class="RegisterP">We are welcoming you to join us, and we hope that you benefit from our website!</p>
+        <a href="register.html"><button class="RegisterButton">Register</button></a>
+      </div>
+    </form>
+    </div>
+  </div>
+</body>
+
+</html>
